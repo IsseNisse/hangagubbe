@@ -18,12 +18,28 @@ public class spel {
         while (inputFile.hasNextLine()) {
             wordList.add(inputFile.nextLine());
         }
-        for (int i = 0 ; i < wordList.size() ; i++) {
-            System.out.println(wordList.get(i));
-        }
+
         Math.random();
-        Random R = new Random (10);
-        R.nextInt(wordList.size());
+        Random R = new Random ();
+        int wordIndex = R.nextInt(wordList.size());
+        String correctWord = wordList.get(wordIndex);
+        //String word = correctWord + correctWord.length();
+
+       String correctWord_ = correctWord.replaceAll("[a-öA-Ö]", "_ ");
+       System.out.println(correctWord_);
+       System.out.println(correctWord);
+
+       Scanner tgb = new Scanner(System.in);
+       System.out.println("Gissa på en bokstav");
+       String gissning = tgb.next();
+       for () {
+           if (correctWord.contains(gissning)) {
+               correctWord_.replace
+           } else {
+               System.out.println("Fel!");
+           }
+       }
+
 
     }
 }
