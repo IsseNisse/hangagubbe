@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class spel {
     public static void main(String[] args) {
 
-        String correctWord = "test";
+        String correctWord = getRandomWord();
 
         char[] correctWord_array = correctWord.replaceAll("[a-öA-Ö]", "_").toCharArray();
 
@@ -38,6 +38,9 @@ public class spel {
             } else {
                 printGubbe(state,j);
                 j++;
+            }
+            if (j == 6) {
+                System.out.println("Du förlorade! Ordet var " + correctWord);
             }
         }
     }
