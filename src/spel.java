@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class spel {
     public static void main(String[] args) {
 
-        String correctWord = getRandomWord();
+        String correctWord = "test";
 
         char[] correctWord_array = correctWord.replaceAll("[a-öA-Ö]", "_").toCharArray();
 
@@ -22,7 +22,8 @@ public class spel {
 
         printWord(correctWord_array);
         int j = 0;
-        while (j != state.length){
+        int score = 0;
+        while (j != state.length && score < correctWord.length()){
 
             Scanner tgb = new Scanner(System.in);
             System.out.println("Gissa på en bokstav");
@@ -31,6 +32,7 @@ public class spel {
             if (correctWord.contains(gissning)) {
                 for (int i = 0; i < correctWord.length(); i++) {
                     if (correctWord.charAt(i) == gissning.charAt(0)) {
+                        score++;
                         correctWord_array[i] = gissning.charAt(0);
                         printWord(correctWord_array);
                     }
