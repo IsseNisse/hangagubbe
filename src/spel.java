@@ -9,7 +9,7 @@ public class spel {
 
         String correctWord = getRandomWord();
 
-        char[] correctWord_array = correctWord.replaceAll("[a-öA-Ö]", "_").toCharArray();
+        char[] underscore = correctWord.replaceAll("[a-öA-Ö]", "_").toCharArray();
 
         String[] state = {
                "  ---| \n" ,
@@ -20,7 +20,7 @@ public class spel {
                "/     \\  \n"
         };
 
-        printWord(correctWord_array);
+        printWord(underscore);
         int j = 0;
         int score = 0;
         while (j != state.length && score < correctWord.length()){
@@ -33,8 +33,8 @@ public class spel {
                 for (int i = 0; i < correctWord.length(); i++) {
                     if (correctWord.charAt(i) == gissning.charAt(0)) {
                         score++;
-                        correctWord_array[i] = gissning.charAt(0);
-                        printWord(correctWord_array);
+                        underscore[i] = gissning.charAt(0);
+                        printWord(underscore);
                     }
                 }
             } else {
